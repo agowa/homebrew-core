@@ -16,8 +16,11 @@ class SpiceServer < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "cmake" => :build
+  depends_on "asciidoc" => :build
 
   depends_on "pixman"
+  depends_on "gdk-pixbuf"
   depends_on "opus"
   depends_on "libjpeg-turbo"
   depends_on "glib"
