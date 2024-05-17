@@ -26,8 +26,10 @@ class Qemu < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "spice-protocol" => :build
+  depends_on "spice-server" => :build
   depends_on "gtk+3" => :build
   depends_on "libnfs" => :build
+  depends_on "jack" => :build
   #depends_on cask: "maciasl"
 
   depends_on "capstone"
