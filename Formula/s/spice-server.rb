@@ -25,7 +25,8 @@ class SpiceServer < Formula
   depends_on "opus"
   depends_on "libjpeg-turbo"
   depends_on "glib"
-  #depends_on "libsasl"
+  #depends_on "libsasl" provided by gsasl?
+  depends_on "gsasl"
   depends_on "lz4"
   depends_on "spice-protocol"
   depends_on "libcacard"
