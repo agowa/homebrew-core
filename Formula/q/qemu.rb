@@ -70,7 +70,6 @@ class Qemu < Formula
     ENV["LIBTOOL"] = "glibtool"
 
     args = %W[
-      --prefix=#{prefix}
       --cc=#{ENV.cc}
       --disable-bsd-user
       --disable-guest-agent
@@ -98,8 +97,7 @@ class Qemu < Formula
       --enable-zstd
       --extra-cflags=-DNCURSES_WIDECHAR=1
       --host-cc=#{ENV.cc}
-      --iasl=/Applications/MaciASL.app/Contents/MacOS/iasl-stable
-      --smbd=/opt/homebrew/sbin/samba-dot-org-smbd
+      --prefix=#{prefix}
     ]
 
     # Sharing Samba directories in QEMU requires the samba.org smbd which is
@@ -110,7 +108,11 @@ class Qemu < Formula
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
 
     args += if OS.mac?
-      ["--enable-hvf", "--enable-cocoa"]
+      [
+        "--enable-hvf",
+        "--enable-cocoa"
+        "--iasl=/Applications/MaciASL.app/Contents/MacOS/iasl-stable"
+      ]
     end
 
     system "./configure", *args
