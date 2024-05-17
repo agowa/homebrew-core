@@ -47,7 +47,7 @@ class Qemu < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "MaciASL" => :build
+  depends_on cask: "MaciASL" => :build
 
   on_linux do
     depends_on "attr"
