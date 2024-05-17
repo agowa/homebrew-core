@@ -84,7 +84,6 @@ class Qemu < Formula
       --enable-rbd
       --enable-sdl
       --enable-slirp
-      --enable-slirp_smbd
       --enable-spice
       --enable-spice_protocol
       --enable-tpm
