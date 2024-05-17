@@ -29,7 +29,7 @@ class Libcacard < Formula
     system "sed", "-i", "", "/subdir('fuzz')/d", "meson.build"
     system "sed", "-i", "", "/  subdir('tests')/d", "meson.build"
     system "meson", "setup", "build", *std_meson_args
-    system "nija", "-C", "build"
+    system "ninja", "-C", "build"
     system "meson", "install", "-C", "build"
   end
 
