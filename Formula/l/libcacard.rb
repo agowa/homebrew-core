@@ -16,15 +16,19 @@ class Libcacard < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "cmake" => :build
 
   depends_on "glib"
   depends_on "nspr"
   depends_on "nss"
+  depends_on "pkcs11-tools"
+  depends_on "softhsm"
+  depends_on "pcsc-lite"
 
   def install
-    system "./configure", "--prefix=#{HOMEBREW_PREFIX}"
-    system "make"
-    system "make", "install", "-C", "libcacard-2.8.1"
+    system "meson", "setup", "build", *std_meson_args
+    system "nija", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do
