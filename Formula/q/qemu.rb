@@ -67,19 +67,37 @@ class Qemu < Formula
     args = %W[
       --prefix=#{prefix}
       --cc=#{ENV.cc}
-      --host-cc=#{ENV.cc}
       --disable-bsd-user
       --disable-guest-agent
-      --enable-slirp
       --enable-capstone
+      --enable-curl
       --enable-curses
       --enable-fdt=system
+      --enable-glusterfs
+      --enable-gtk
+      --enable-l2tpv3
+      --enable-libnfs
+      --enable-libiscsi
       --enable-libssh
+      --enable-libusb
+      --enable-modules
+      --enable-nfs
+      --enable-rbd
+      --enable-sdl
+      --enable-slirp
+      --enable-slirp_smbd
+      --enable-spice
+      --enable-spice_protocol
+      --enable-tpm
       --enable-vde
       --enable-virtfs
+      --enable-vvfat
+      --enable-vmnet
       --enable-zstd
       --extra-cflags=-DNCURSES_WIDECHAR=1
-      --disable-sdl
+      --host-cc=#{ENV.cc}
+      --iasl=/Applications/MaciASL.app/Contents/MacOS/iasl-stable
+      --smbd=/opt/homebrew/sbin/samba-dot-org-smbd
     ]
 
     # Sharing Samba directories in QEMU requires the samba.org smbd which is
@@ -90,9 +108,7 @@ class Qemu < Formula
     args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
 
     args += if OS.mac?
-      ["--disable-gtk", "--enable-cocoa"]
-    else
-      ["--enable-gtk"]
+      ["--enable-hvf", "--enable-cocoa"]
     end
 
     system "./configure", *args
