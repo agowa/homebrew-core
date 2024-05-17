@@ -18,7 +18,7 @@ class Libcacard < Formula
   depends_on "ninja" => :build
 
   depends_on "glib"
-  depends_on "nsrp"
+  depends_on "nspr"
   depends_on "nss"
 
   def install
