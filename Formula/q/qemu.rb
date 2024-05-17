@@ -26,7 +26,6 @@ class Qemu < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "spice-protocol" => :build
-  depends_on "MaciASL" => :build
   depends_on "attr" => :build
   depends_on "gtk+3" => :build
   depends_on "libcap-ng" => :build
@@ -50,6 +49,7 @@ class Qemu < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "MaciASL" => :build
 
   on_linux do
     depends_on "attr"
