@@ -24,7 +24,7 @@ class SpiceServer < Formula
   #depends_on "libsasl"
   depends_on "lz4"
   depends_on "spice-protocol"
-  #depends_on "libcacard"
+  depends_on "libcacard"
   depends_on "six" => :build
   #depends_on "pyparsing" => :build
 
