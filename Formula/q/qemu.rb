@@ -26,6 +26,10 @@ class Qemu < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "spice-protocol" => :build
+  depends_on "MaciASL" => :build
+  depends_on "attr" => :build
+  depends_on "gtk+3" => :build
+  depends_on "libcap-ng" => :build
 
   depends_on "capstone"
   depends_on "dtc"
