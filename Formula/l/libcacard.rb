@@ -28,7 +28,7 @@ class Libcacard < Formula
   def install
     system "sed", "-i", "", "/subdir('fuzz')/d; /subdir('fuzz')/d", "meson.build"
     system "meson", "setup", "build", *std_meson_args
-    #system "nija", "-C", "build"
+    system "nija", "-C", "build"
     system "meson", "install", "-C", "build"
   end
 
