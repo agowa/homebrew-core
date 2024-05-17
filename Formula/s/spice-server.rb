@@ -18,6 +18,7 @@ class SpiceServer < Formula
   depends_on "ninja" => :build
   depends_on "cmake" => :build
   depends_on "asciidoc" => :build
+  depends_on "pkg-config" => :build
 
   depends_on "pixman"
   depends_on "gdk-pixbuf"
