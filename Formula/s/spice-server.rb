@@ -45,6 +45,7 @@ class SpiceServer < Formula
     # Warning not gnu-sed. -i needs a zero length argument after it.
     system "sed", "-i", "", "s/if not version_info.contains('git')/if version_info.length() >= 4/", "server/meson.build"
     system "sed", "-i", "", "/meson-dist/d", "meson.build"
+    system "sed", "-i", "", "s/\['rt', 'm'\]/['m']/", "meson.build"
     system "pip3", "install", "--break-system-packages", "--user", "pyparsing"
     system "meson", "setup", "build", *meson_args
     system "nija", "-C", "build"
