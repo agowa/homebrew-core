@@ -31,6 +31,7 @@ class SpiceServer < Formula
   depends_on "spice-protocol"
   depends_on "libcacard"
   depends_on "six" => :build
+  depends_on "gstreamer" => :build, :optional
   #depends_on "pyparsing" => :build
 
   def install
@@ -39,7 +40,8 @@ class SpiceServer < Formula
       --wrap-mode=nodownload
       -Db_pie=true
       -Dpython.bytecompile=1
-      -Dgstreamer=no
+      -Dgstreamer=1.0
+      #-Dgstreamer=no
     ]
     # Warning not gnu-sed. -i needs a zero length argument after it.
     system "sed", "-i", "", "s/if not version_info.contains('git')/if version_info.length() >= 4/", "server/meson.build"
