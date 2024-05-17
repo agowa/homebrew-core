@@ -26,7 +26,8 @@ class Libcacard < Formula
   depends_on "pcsc-lite"
 
   def install
-    system "sed", "-i", "", "/subdir('fuzz')/d; /subdir('tests')/d", "meson.build"
+    system "sed", "-i", "", "/subdir('fuzz')/d", "meson.build"
+    system "sed", "-i", "", "/  subdir('tests')/d", "meson.build"
     system "meson", "setup", "build", *std_meson_args
     system "nija", "-C", "build"
     system "meson", "install", "-C", "build"
