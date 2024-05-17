@@ -10,9 +10,9 @@ class SpiceServer < Formula
     regex(/href=.*?spice[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "c95213126a4de3d3ab508fbfc7f23f11ece2f0011d3a6d251d7f79034376066e"
-  end
+  #bottle do
+  #  sha256 cellar: :any_skip_relocation, all: "c95213126a4de3d3ab508fbfc7f23f11ece2f0011d3a6d251d7f79034376066e"
+  #end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
