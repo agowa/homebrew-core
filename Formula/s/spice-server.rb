@@ -47,7 +47,7 @@ class SpiceServer < Formula
     system "sed", "-i", "", "s/\\\['rt', 'm'\\\]/\['m'\]/", "meson.build"
     system "pip3", "install", "--break-system-packages", "--user", "pyparsing"
     system "meson", "setup", "build", *meson_args
-    system "nija", "-C", "build"
+    system "ninja", "-C", "build"
     system "meson", "install", "-C", "build"
   end
 
