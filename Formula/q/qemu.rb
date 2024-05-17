@@ -81,7 +81,6 @@ class Qemu < Formula
       --enable-libssh
       --enable-libusb
       --enable-modules
-      --enable-nfs
       --enable-rbd
       --enable-sdl
       --enable-slirp
