@@ -100,19 +100,19 @@ class Qemu < Formula
       --prefix=#{prefix}
     ]
 
-    # Sharing Samba directories in QEMU requires the samba.org smbd which is
-    # incompatible with the macOS-provided version. This will lead to
-    # silent runtime failures, so we set it to a Homebrew path in order to
-    # obtain sensible runtime errors. This will also be compatible with
-    # Samba installations from external taps.
-    args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
+    if OS.mac?
+      # Sharing Samba directories in QEMU requires the samba.org smbd which is
+      # incompatible with the macOS-provided version. This will lead to
+      # silent runtime failures, so we set it to a Homebrew path in order to
+      # obtain sensible runtime errors. This will also be compatible with
+      # Samba installations from external taps.
+      args << "--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd"
 
-    args += if OS.mac?
-      [
-        "--enable-hvf",
-        "--enable-cocoa"
-        "--iasl=/Applications/MaciASL.app/Contents/MacOS/iasl-stable"
-      ]
+      args += [
+          "--enable-hvf",
+          "--enable-cocoa",
+          "--iasl=/Applications/MaciASL.app/Contents/MacOS/iasl-stable"
+        ]
     end
 
     system "./configure", *args
