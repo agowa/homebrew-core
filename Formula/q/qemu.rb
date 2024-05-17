@@ -85,7 +85,6 @@ class Qemu < Formula
       --enable-sdl
       --enable-slirp
       --enable-spice
-      --enable-spice_protocol
       --enable-tpm
       --enable-vde
       --enable-virtfs
