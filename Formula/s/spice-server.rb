@@ -25,6 +25,7 @@ class SpiceServer < Formula
   depends_on "lz4"
   depends_on "spice-protocol"
   #depends_on "libcacard"
+  depends_on "six" => :build
 
   def install
     meson_args = std_meson_args + %w[
