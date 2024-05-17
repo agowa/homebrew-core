@@ -41,7 +41,6 @@ class SpiceServer < Formula
       -Db_pie=true
       -Dpython.bytecompile=1
       -Dgstreamer=1.0
-      #-Dgstreamer=no
     ]
     # Warning not gnu-sed. -i needs a zero length argument after it.
     system "sed", "-i", "", "s/if not version_info.contains('git')/if version_info.length() >= 4/", "server/meson.build"
