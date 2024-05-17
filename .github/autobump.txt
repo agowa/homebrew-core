@@ -1216,6 +1216,7 @@ libavif
 libbpf
 libbsd
 libcap-ng
+libchewing
 libclc
 libcoap
 libcouchbase
@@ -1550,6 +1551,7 @@ nushell
 nut
 nvc
 nvchecker
+nzbget
 oauth2_proxy
 oauth2c
 objfw
@@ -2022,6 +2024,7 @@ sniffnet
 snort
 snowflake
 snyk-cli
+soapyremote
 socket_vmnet
 solana
 solhint
@@ -2036,6 +2039,7 @@ source-to-image
 sourcekitten
 sourcery
 spack
+spatialindex
 spectral-cli
 spglib
 sphinx-doc
@@ -2216,6 +2220,7 @@ ttdl
 ttyd
 ttyplot
 tup
+twine
 tygo
 typescript
 typescript-language-server

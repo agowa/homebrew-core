@@ -702,8 +702,7 @@
     "exclude_packages": ["certifi", "cryptography"]
   },
   "sherlock": {
-    "exclude_packages": ["certifi", "numpy"],
-    "extra_packages": ["setuptools"]
+    "exclude_packages": ["certifi", "numpy"]
   },
   "shodan": {
     "exclude_packages": ["certifi"]

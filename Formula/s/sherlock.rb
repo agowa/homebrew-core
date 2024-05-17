@@ -9,13 +9,14 @@ class Sherlock < Formula
   head "https://github.com/sherlock-project/sherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26aedc590d23e6364b1735eaa513494f950b2e499b958ec8d4973766aa663f9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4d4070e98c4bd1152b8d2b57ea460ee155eca49335f6708edbfd4066ca86871"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "822c3e415445ad5a9ea376b4740cfda8adc2d988cb4e37044dba2fa43e12462d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9a2808ad630f7e05bfd102ea55b4749413bcde7d953046694aad296345c8743b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e5e59bf90156bbf9b297095b404bbc61a1a7881873cb427b769aafac8164fef"
-    sha256 cellar: :any_skip_relocation, monterey:       "33a5f6b73b6c772710d7bf6ef862a9c8e7ee4f6c382da8f5eb4bba44df99de09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e814c15a0d1db8555470aead884633a692909df7affe1f98ef5518297e7d7982"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0941a62b71366238596bec69055a31ac68eb66a545898af2452528c2e9d213f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc885acb74e7e461058d721a29cecddc325d8143ae914021ec5b4b7e4e612249"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "999bfa592f902a31770dda5fa36db952b85c4c2ee1369621f2d64a42cdd46ecd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "23a394ef5c985aaa8fe0f8589fa345c83ed7dd507bc9a23aa301e379356abc70"
+    sha256 cellar: :any_skip_relocation, ventura:        "a5fc6bcb20e46893d386d68b75b0fa5acff19ddc5d05447782c68600fcf5e2fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a940590576be252cd2211bb1df4d0e9e328cdcc7febbe847d867063226ee235"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "149dc0544fd767c0a2071adfca76f8d99bf2c976c9730816ec74f28900650be4"
   end
 
   depends_on "cmake" => :build
@@ -87,11 +88,6 @@ class Sherlock < Formula
     sha256 "f55a4ef80070e2858e7d1e73123d2bfaeaf25b93fd34384d8ddf148e2b676373"
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
   resource "six" do
     url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
@@ -118,7 +114,7 @@ class Sherlock < Formula
   end
 
   def install
-    virtualenv_install_with_resources start_with: "setuptools"
+    virtualenv_install_with_resources
   end
 
   test do

@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.15.50.tar.gz"
-  sha256 "7c5ffcbae6b1299adbdeb1113e9996d1e1a8352b4bfd9b09d916fda42111f152"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.15.52.tar.gz"
+  sha256 "ef04c5baca93c06e83a0453f0452d69862a2504fd63925838fd3a78feb98dcc2"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6221926961e719ce17f9e77cfc3231995a7f64cc79b952349337d25e06a8d574"
-    sha256 cellar: :any,                 arm64_ventura:  "0beb401065f8e60cd7327a04d0604e788e3fb225a0ae4a42a7b6671b21aa8573"
-    sha256 cellar: :any,                 arm64_monterey: "9e6c11d712397961a54c147d267af8539329091fe0b307b9791f0e50e7076873"
-    sha256 cellar: :any,                 sonoma:         "597fdcbc4045c002191fd6d2d19cc75ceaa16080e92cb9d74efa2ec42c6082e9"
-    sha256 cellar: :any,                 ventura:        "1be6befbde9308a0fd1074b86f260313a7424b80e0ea9b8f5cd6c7cddba9f763"
-    sha256 cellar: :any,                 monterey:       "2b2175e13ab39f46ffe6635701b2128cc8cb989ef6e89253a50065a87bf2d0d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bb7c3dc49fba41e6cf4c60391451c4f069b0adb6ceb3742f34960401a518deb"
+    sha256 cellar: :any,                 arm64_sonoma:   "6efc74a153dd1469283b55cb42a708d9cb60ab6f2f4304fbe3a3bf4478aa0136"
+    sha256 cellar: :any,                 arm64_ventura:  "2125c5a6c997931050330670d7452f216e129da5348cb2b0c91db5ecc4266f1a"
+    sha256 cellar: :any,                 arm64_monterey: "d7b5250a8216f03352f0e81c99d5e3754529920d93907c9712b0dc89ee7f4cd9"
+    sha256 cellar: :any,                 sonoma:         "bc6a82f7e741aa5eacbc8912867db378aed2b87a6c0ffaa51411800a9a10edc8"
+    sha256 cellar: :any,                 ventura:        "f5e65d2319d6ba2f7b482781eabb93569a163ef817a9817297ac62150b396d90"
+    sha256 cellar: :any,                 monterey:       "7923c9d48145f33fe24e6c21b9a6af347162557e3c5fa5da89cc1b23bd8e288c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93e6168bbe10abfab9366a5afd97940c00f838d139aba54a7499118bc37e4eed"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +25,7 @@ class Awscli < Formula
   depends_on "openssl@3"
   depends_on "python@3.11" # Python 3.12 issue: https://github.com/aws/aws-cli/issues/8342
 
+  uses_from_macos "libffi"
   uses_from_macos "mandoc"
 
   resource "awscrt" do
