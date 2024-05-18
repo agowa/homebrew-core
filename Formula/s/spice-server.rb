@@ -21,10 +21,11 @@ class SpiceServer < Formula
   depends_on "pkg-config" => :build
 
   depends_on "pixman"
-  depends_on "gdk-pixbuf"
+  depends_on "gdk-pixbuf" => :build
   depends_on "opus"
   depends_on "libjpeg-turbo"
   depends_on "glib"
+  depends_on "glib-networking" => :build
   #depends_on "libsasl" provided by cyrus-sasl
   depends_on "cyrus-sasl"
   depends_on "lz4"
